@@ -45,6 +45,8 @@ Think of it as giving Claude a phone it can use to call your systems.
 └─────────────────────────────────────────────────────────┘
 ```
 
+![System Architecture](architecture.png)
+
 ### The 3 Layers
 
 | Layer | What It Is | What It Does |
