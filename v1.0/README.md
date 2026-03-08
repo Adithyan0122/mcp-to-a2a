@@ -34,6 +34,16 @@ The system functions around a continuous loop of interconnected, specialized age
 
 ![Order Management](screenshots/dashboard_4.png)
 
+## 📚 Extensive Documentation
+
+For a deep dive into the system's inner workings, please refer to the detailed documentation located in the `docs/` folder:
+
+1. [01 - System Architecture & Data Flow](docs/01-system-architecture.md)
+2. [02 - The Market API & Pricing Agent](docs/02-market-and-pricing-agents.md)
+3. [03 - Inventory & Supplier Agents](docs/03-inventory-and-supplier-agents.md)
+4. [04 - Order & Finance Agents](docs/04-order-and-finance-agents.md)
+5. [05 - Shared Infrastructure & Tech Stack](docs/05-shared-infrastructure.md)
+
 ## 🧠 System Architecture & Agents
 
 *   **`market-api`** (Port 9000): The simulated external market.
