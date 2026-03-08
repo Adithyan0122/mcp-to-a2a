@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #16161d;
+  --bg-card-hover: #1c1c25;
+  --border: #2a2a35;
+  --text-primary: #e8e8ed;
+  --text-secondary: #8b8b96;
+  --accent-blue: #4c6ef5;
+  --accent-green: #40c057;
+  --accent-yellow: #fab005;
+  --accent-red: #fa5252;
+  --accent-purple: #7950f2;
+  --gradient-blue: linear-gradient(135deg, #4c6ef5, #7950f2);
+  --gradient-green: linear-gradient(135deg, #40c057, #20c997);
+  --gradient-orange: linear-gradient(135deg, #fd7e14, #fab005);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-family: 'Inter', system-ui, sans-serif; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Card Styles ─────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(76, 110, 245, 0.3);
+}
+
+/* ── Status Badges ───────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-green {
+  background: rgba(64, 192, 87, 0.15);
+  color: #40c057;
+  border: 1px solid rgba(64, 192, 87, 0.2);
+}
+
+.badge-yellow {
+  background: rgba(250, 176, 5, 0.15);
+  color: #fab005;
+  border: 1px solid rgba(250, 176, 5, 0.2);
+}
+
+.badge-red {
+  background: rgba(250, 82, 82, 0.15);
+  color: #fa5252;
+  border: 1px solid rgba(250, 82, 82, 0.2);
+}
+
+.badge-blue {
+  background: rgba(76, 110, 245, 0.15);
+  color: #4c6ef5;
+  border: 1px solid rgba(76, 110, 245, 0.2);
+}
+
+/* ── Glow Effects ────────────────────────────────────────────────────── */
+
+.glow-green { box-shadow: 0 0 15px rgba(64, 192, 87, 0.15); }
+.glow-yellow { box-shadow: 0 0 15px rgba(250, 176, 5, 0.15); }
+.glow-red { box-shadow: 0 0 15px rgba(250, 82, 82, 0.15); }
+.glow-blue { box-shadow: 0 0 15px rgba(76, 110, 245, 0.15); }
+
+/* ── Pulse Animation ─────────────────────────────────────────────────── */
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a45; }
+
+/* ── Table ───────────────────────────────────────────────────────────── */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(42, 42, 53, 0.5);
+}
+
+tr:hover td {
+  background: rgba(76, 110, 245, 0.03);
+}
+
+/* ── Skeleton ────────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
