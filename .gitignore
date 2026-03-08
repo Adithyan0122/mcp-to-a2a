@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 mcp-a2a/
 .env
+.DS_Store
